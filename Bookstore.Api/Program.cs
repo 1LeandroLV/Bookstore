@@ -1,3 +1,6 @@
+using BookStore.Api.Interfaces;
+using BookStore.Api.Repositories;
+using BookStore.Api.Services;
 using Microsoft.EntityFrameworkCore;
 using BookStore.Api.Data;
 
@@ -8,6 +11,10 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddScoped<IBookRepository, BookRepository>();
+
+builder.Services.AddScoped<IBookService, BookService>();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 
