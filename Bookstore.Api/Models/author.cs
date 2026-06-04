@@ -1,6 +1,4 @@
-﻿using Bookstore.Api.Models;
-
-namespace BookStore.Api.Models
+﻿namespace BookStore.Api.Models
 {
     public class Author
     {
