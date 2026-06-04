@@ -20,10 +20,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="InterFaces\" />
     <Folder Include="Dtos\" />
     <Folder Include="Services\" />
-    <Folder Include="Repositories\" />
   </ItemGroup>
 
 </Project>
