@@ -1,5 +1,7 @@
+
 using BookStore.Api.Data;
 using BookStore.Api.Interfaces;
+using BookStore.Api.Models;
 using BookStore.Api.Repositories;
 using BookStore.Api.Services;
 using Microsoft.EntityFrameworkCore;
@@ -14,6 +16,9 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 
 builder.Services.AddScoped<IBookRepository, BookRepository>();
 builder.Services.AddScoped<IBookService, BookService>();
+builder.Services.AddScoped<IGenericRepository<Author>, GenericRepository<Author>>();
+
+builder.Services.AddScoped<IAuthorService, AuthorService>();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
